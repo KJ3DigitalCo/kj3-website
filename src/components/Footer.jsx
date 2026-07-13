@@ -4,10 +4,12 @@ const LINKS = [
   { href: '/#contact', label: 'Contact' },
 ]
 
-// TODO: point these at the real social profiles before launch.
 const SOCIALS = [
-  { label: 'Facebook', href: '#' },
-  { label: 'Instagram', href: '#' },
+  { label: 'Facebook', href: 'https://www.facebook.com/kj3digitalcoofficial' },
+  { label: 'Instagram', href: 'https://www.instagram.com/kj3digitalcoofficial' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@kj3digitalcoofficial' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@kj3digitalcoofficial' },
+  { label: 'X', href: 'https://x.com/kj3digitalco' },
 ]
 
 export default function Footer() {
@@ -44,6 +46,8 @@ export default function Footer() {
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-sans text-sm text-paper/70 transition-colors duration-200 hover:text-paper"
             >
               {social.label}
