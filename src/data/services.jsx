@@ -36,7 +36,7 @@ export const SERVICES = [
           included: 'A full redesign of an outdated or broken site — new look, same or improved content.',
         },
         {
-          name: 'Monthly Maintenance',
+          name: 'Hosting & Maintenance',
           price: '₱2,000/mo',
           included: "Hosting, backups, edits, and security handled every month, so you don't have to think about it.",
         },
