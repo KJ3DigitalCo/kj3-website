@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import Seo from '../components/Seo.jsx'
 import Hero from '../components/Hero.jsx'
 import BuildTransition from '../components/BuildTransition.jsx'
 import ValueProps from '../components/ValueProps.jsx'
@@ -31,6 +32,11 @@ export default function HomePage() {
 
   return (
     <>
+      <Seo
+        title="KJ3 Digital Co. | Digital Marketing Agency in the Philippines"
+        description="Websites, social media, SEO, paid ads, and more for local and small businesses across the Philippines — fast turnarounds, always checked by a real strategist."
+        path="/"
+      />
       <Hero />
       <BuildTransition />
       <ValueProps />

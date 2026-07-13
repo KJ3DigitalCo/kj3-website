@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import Seo from '../components/Seo.jsx'
 import Reveal from '../components/Reveal.jsx'
 import MagneticButton from '../components/MagneticButton.jsx'
 import PricingTable from '../components/PricingTable.jsx'
@@ -16,6 +17,11 @@ export default function ServicesPage() {
 
   return (
     <>
+      <Seo
+        title="Services & Pricing | KJ3 Digital Co."
+        description="Website builds, social media management, SEO, paid ads, chatbot automation, and more — see exactly what's included and what it costs."
+        path="/services"
+      />
       <section className="bg-pine-deep pb-20 pt-40">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <Reveal>

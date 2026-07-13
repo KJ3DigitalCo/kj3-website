@@ -1,3 +1,4 @@
+import Seo from '../components/Seo.jsx'
 import FlagSpotlight from '../components/FlagSpotlight.jsx'
 import MagneticText from '../components/MagneticText.jsx'
 import MagneticButton from '../components/MagneticButton.jsx'
@@ -74,6 +75,12 @@ export default function GetQuotePage() {
 
   return (
     <>
+      <Seo
+        title="Get a Free Quote | KJ3 Digital Co."
+        description="Get a free, no-pressure quote for your website, social media, ads, or SEO — tailored to your business and budget."
+        path="/get-a-quote"
+        noindex
+      />
       <header className="bg-pine-deep py-6">
         <div className="mx-auto flex max-w-6xl items-center justify-center px-6">
           <span className="flex items-center gap-2 font-display text-lg font-bold text-paper">
