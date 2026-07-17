@@ -8,8 +8,6 @@ const SOCIALS = [
   { label: 'Facebook', href: 'https://www.facebook.com/kj3digitalcoofficial' },
   { label: 'Instagram', href: 'https://www.instagram.com/kj3digitalcoofficial' },
   { label: 'TikTok', href: 'https://www.tiktok.com/@kj3digitalcoofficial' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@kj3digitalcoofficial' },
-  { label: 'X', href: 'https://x.com/kj3digitalco' },
 ]
 
 export default function Footer() {
