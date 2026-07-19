@@ -1,7 +1,7 @@
 export const SERVICES = [
   {
     slug: 'website-builds',
-    title: 'Website Builds',
+    title: 'Website Creation',
     summary: 'Fast, sharp websites that turn visitors into customers.',
     description:
       'Landing pages, full business websites, and online stores that load fast and look sharp on any phone or laptop — built to turn visitors into customers, not just look nice.',

@@ -1,5 +1,5 @@
 const SERVICE_TAGS = [
-  'Website Builds',
+  'Website Creation',
   'Social Media Management',
   'DM Sales Handling',
   'Content Creation',
