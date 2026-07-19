@@ -204,7 +204,7 @@ export default function BuildTransition() {
   }, [reduced])
 
   return (
-    <section ref={sectionRef} className="relative h-screen w-full overflow-hidden bg-black">
+    <section ref={sectionRef} className="relative h-dvh w-full overflow-hidden bg-black">
       <div ref={flashRef} className="pointer-events-none absolute inset-0 bg-marigold-deep/60 opacity-0" />
 
       <div ref={ringRef} className="pointer-events-none absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-marigold opacity-0" />
