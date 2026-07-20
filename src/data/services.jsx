@@ -146,6 +146,12 @@ export const SERVICES = [
           included: 'Edited from footage you already have — for promos or testimonials.',
         },
         {
+          name: 'AI-Generated Video',
+          price: '₱1,500',
+          included:
+            'AI spokesperson + AI-generated footage, scripted and edited into one ad — no footage needed from you. Up to 60 seconds.',
+        },
+        {
           name: 'Carousel set',
           price: '₱600',
           included: 'A multi-slide educational or step-by-step post.',
@@ -166,6 +172,7 @@ export const SERVICES = [
           included: 'Print-ready design for offline marketing.',
         },
       ],
+      addOns: [{ name: 'AI-Generated Video — extra 15 seconds', price: '₱375' }],
       note: 'À la carte, no retainer required.',
     },
   },
