@@ -54,10 +54,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl border-t border-paper/10 px-6 pt-6">
+      <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-paper/10 px-6 pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-sans text-xs text-paper/50">
           © {year} KJ3 Digital Co. All rights reserved.
         </p>
+        <a
+          href="/privacy-policy"
+          className="font-sans text-xs text-paper/50 transition-colors duration-200 hover:text-paper/80"
+        >
+          Privacy Policy
+        </a>
       </div>
     </footer>
   )
