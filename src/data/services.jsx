@@ -201,22 +201,25 @@ export const SERVICES = [
         {
           name: 'Basic',
           price: '₱6,000/mo',
-          included: 'We keep the campaign alive — pausing underperformers and refreshing stale creative.',
+          included:
+            'Ad spend up to ₱10,000/mo. We keep the campaign alive — pausing underperformers and refreshing stale creative.',
         },
         {
           name: 'Standard',
           price: '₱10,000/mo',
-          included: 'Active A/B testing — we kill the losing ad and scale the winner.',
+          included:
+            'Ad spend up to ₱30,000/mo. Active A/B testing — we kill the losing ad and scale the winner.',
         },
         {
           name: 'Advanced',
           price: '₱20,000/mo',
-          included: 'A full cold → warm → retargeting funnel across your ad account.',
+          included:
+            'Ad spend up to ₱100,000/mo. A full cold → warm → retargeting funnel across your ad account.',
         },
         {
           name: 'Enterprise/Scale',
           price: '₱20,000/mo + 8% beyond ₱100k spend',
-          included: 'Everything in Advanced, with no cap on ad spend.',
+          included: 'No spend cap. Everything in Advanced, uncapped ad spend.',
         },
       ],
       note:
