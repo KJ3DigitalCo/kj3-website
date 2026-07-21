@@ -27,7 +27,7 @@ export default function FlagSpotlight() {
     <div ref={wrapRef} className="absolute inset-0 overflow-hidden">
       <div
         className="absolute inset-0 h-full w-full bg-cover"
-        style={{ backgroundImage: 'url(/philippine-flag.png)', backgroundPosition: 'left center' }}
+        style={{ backgroundImage: 'url(/philippine-flag.webp)', backgroundPosition: 'left center' }}
         aria-hidden="true"
       />
       <div className={`absolute inset-0 bg-pine-deep ${interactive ? 'flag-spotlight-mask' : 'opacity-[0.93]'}`} />
