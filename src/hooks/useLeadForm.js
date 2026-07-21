@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { trackEvent } from '../lib/analytics.js'
 
 const SHEET_SCRIPT_URL =
   'https://script.google.com/macros/s/AKfycbyIWKnuPqu1fGUdYMh2wmL0b03oOL-RnH50q5-nA_oaj0s-Cg90o5IlMNkcfAB5olfu9A/exec'
@@ -74,6 +75,7 @@ export default function useLeadForm(source = 'Unknown') {
         }),
       })
       setStatus('sent')
+      trackEvent('Lead')
       setForm(EMPTY_FORM)
     } catch {
       setStatus('error')
