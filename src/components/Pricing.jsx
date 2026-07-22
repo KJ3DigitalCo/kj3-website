@@ -5,7 +5,7 @@ import { SERVICES } from '../data/services.jsx'
 
 const BUNDLES = [
   {
-    name: 'Starter Bundle',
+    name: 'Essentials Bundle',
     price: '₱8,500',
     period: '/mo',
     description:
@@ -16,7 +16,7 @@ const BUNDLES = [
     ],
   },
   {
-    name: 'Growth Bundle',
+    name: 'Momentum Bundle',
     price: '₱17,000',
     period: '/mo',
     description:
@@ -28,7 +28,7 @@ const BUNDLES = [
     featured: true,
   },
   {
-    name: 'All-In Package',
+    name: 'All-In Bundle',
     price: '₱35,000',
     period: '/mo',
     description:
@@ -40,7 +40,7 @@ const BUNDLES = [
     ],
   },
   {
-    name: 'Scale Package',
+    name: 'Scale Bundle',
     price: '₱52,000',
     period: '/mo',
     description:
