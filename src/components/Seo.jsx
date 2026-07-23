@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 const SITE_URL = 'https://kj3digitalco.com'
 const SITE_NAME = 'KJ3 Digital Co.'
 
@@ -5,6 +7,16 @@ const SITE_NAME = 'KJ3 Digital Co.'
 // into <head> automatically — no react-helmet or similar library needed.
 export default function Seo({ title, description, path = '/', noindex = false }) {
   const url = `${SITE_URL}${path}`
+
+  // index.html keeps a static fallback <meta name="description"> for
+  // crawlers that don't execute JS (e.g. Bing's scanner flagged it missing
+  // otherwise). React's own tag above doesn't replace that static one —
+  // it only dedupes against other React-rendered tags — so once this
+  // component mounts in a real browser, strip the static one manually.
+  useEffect(() => {
+    const tags = document.querySelectorAll('meta[name="description"]')
+    if (tags.length > 1) tags[0].remove()
+  }, [])
 
   return (
     <>

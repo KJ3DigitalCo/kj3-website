@@ -8,8 +8,16 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Title and meta description are rendered per-route by <Seo> (src/components/Seo.jsx) -->
+    <!-- Title and description below are static fallbacks for crawlers that
+         don't execute JS (e.g. Bing). <Seo> (src/components/Seo.jsx)
+         renders the real per-page versions and removes these once the app
+         mounts in a real browser, so JS-capable visitors/crawlers always
+         see the correct per-page ones instead. -->
     <title>KJ3 Digital Co.</title>
+    <meta
+      name="description"
+      content="Websites, social media, SEO, paid ads, and more for local and small businesses across the Philippines — fast turnarounds, always checked by a real strategist."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Loaded non-blocking: media="print" makes the browser fetch it
