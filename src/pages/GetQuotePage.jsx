@@ -11,7 +11,7 @@ import { SERVICES } from '../data/services.jsx'
 const CONTACT_EMAIL = 'kj3digitalco@gmail.com'
 
 const TRUST_POINTS = [
-  'A real strategist reviews every quote — not a generic template.',
+  'A real strategist gets on the call — not a generic sales script.',
   'Built for local and small businesses across the Philippines.',
   "We reply within one business day — guaranteed.",
 ]
@@ -29,8 +29,8 @@ const STEPS = [
   },
   {
     number: '03',
-    title: 'Get your free quote',
-    description: 'Tailored pricing in your inbox within one business day. No pressure to commit.',
+    title: 'Get on your free call',
+    description: "We'll reach out to schedule it within one business day. No pressure to commit.",
   },
 ]
 
@@ -65,7 +65,7 @@ function IncludedTable({ rows, label = 'Package' }) {
 
 export default function GetQuotePage() {
   const { form, errors, status, updateField, handleSubmit, setStatus } = useLeadForm(
-    'Get a Quote Landing Page',
+    'Free Strategy Call Funnel',
   )
 
   const inputClass = (field) =>
@@ -76,8 +76,8 @@ export default function GetQuotePage() {
   return (
     <>
       <Seo
-        title="Get a Free Quote | KJ3 Digital Co."
-        description="Get a free, no-pressure quote for your website, social media, ads, or SEO — tailored to your business and budget."
+        title="Book a Free Strategy Call | KJ3 Digital Co."
+        description="Book a free, no-pressure strategy call for your website, social media, ads, or SEO — tailored to your business and budget."
         path="/get-a-quote"
         noindex
       />
@@ -99,16 +99,16 @@ export default function GetQuotePage() {
 
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 py-20 text-center">
           <span className="mb-5 rounded-full border border-marigold/40 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-marigold">
-            Free Quote · No Obligation
+            Free Strategy Call · No Obligation
           </span>
           <MagneticText
             as="h1"
-            text="Get a free, no-pressure quote for your business online."
+            text="A free strategy call to grow your business online."
             className="font-display text-4xl font-bold leading-[1.1] text-paper sm:text-5xl"
           />
           <p className="mt-6 max-w-2xl font-sans text-base leading-relaxed text-paper/80 sm:text-lg">
             Website, social media, ads, SEO, or all of it — tell us what you need and a KJ3
-            strategist will get back to you with a quote built around your business and budget.
+            strategist will walk you through a plan built around your business and budget.
           </p>
 
           <ul className="mx-auto mt-8 flex max-w-xl flex-col gap-3 text-left">
@@ -139,7 +139,7 @@ export default function GetQuotePage() {
             href="#quote-form"
             className="mt-10 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep"
           >
-            Get My Free Quote
+            Book My Free Strategy Call
           </MagneticButton>
         </div>
       </section>
@@ -201,10 +201,11 @@ export default function GetQuotePage() {
         <div className="relative z-10 mx-auto max-w-xl px-6">
           <div className="text-center">
             <h2 className="font-display text-3xl font-bold text-paper sm:text-4xl">
-              Get your free quote
+              Book your free strategy call
             </h2>
             <p className="mt-3 font-sans text-sm leading-relaxed text-paper/70">
-              Fill this out and we'll reply within one business day — no pressure to commit.
+              Fill this out and we'll reach out to schedule it within one business day — no
+              pressure to commit.
             </p>
           </div>
 
@@ -216,7 +217,7 @@ export default function GetQuotePage() {
               >
                 <h3 className="font-display text-xl font-bold text-ink">You're all set!</h3>
                 <p className="mt-2 font-sans text-sm leading-relaxed text-ink-muted">
-                  Thanks for reaching out — we'll reply with your free, no-pressure quote within
+                  Thanks for reaching out — we'll reply to schedule your free strategy call within
                   one business day.
                 </p>
                 <p className="mt-1 font-sans text-sm leading-relaxed text-ink-muted">
@@ -382,7 +383,7 @@ export default function GetQuotePage() {
                   disabled={status === 'sending'}
                   className="mt-2 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep disabled:opacity-60"
                 >
-                  {status === 'sending' ? 'Sending…' : 'Get My Free Quote'}
+                  {status === 'sending' ? 'Sending…' : 'Book My Free Strategy Call'}
                 </MagneticButton>
               </form>
             )}
