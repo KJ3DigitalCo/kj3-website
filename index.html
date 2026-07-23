@@ -12,10 +12,21 @@
     <title>KJ3 Digital Co.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Loaded non-blocking: media="print" makes the browser fetch it
+         without waiting to render, then onload swaps it to apply to the
+         real page. Saves ~2s of render-blocking time per PageSpeed. -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T889QEE7Y7"></script>
@@ -41,9 +52,6 @@
       fbq('init', '1376723744600120');
       fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1376723744600120&ev=PageView&noscript=1"
-    /></noscript>
     <!-- End Meta Pixel Code -->
 
     <!-- Structured data: tells Google this is a local business, what it
@@ -86,6 +94,14 @@
     </script>
   </head>
   <body>
+    <!-- Meta Pixel noscript fallback (must live in body, not head, per HTML spec) -->
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1376723744600120&ev=PageView&noscript=1"
+    /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
