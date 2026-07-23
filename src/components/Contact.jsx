@@ -52,14 +52,28 @@ export default function Contact() {
                 Thanks for reaching out — we'll reply with a free, no-pressure quote within one
                 business day.
               </p>
-              <MagneticButton
-                as="button"
-                type="button"
-                onClick={() => setStatus('idle')}
-                className="mt-6 rounded-full border border-line px-6 py-2.5 font-sans text-sm font-semibold text-ink hover:border-pine"
-              >
-                Send another message
-              </MagneticButton>
+              <p className="mt-1 font-sans text-sm leading-relaxed text-ink-muted">
+                Want a faster reply? Message us on Facebook and we'll get back to you sooner.
+              </p>
+              <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+                <MagneticButton
+                  as="a"
+                  href="https://www.facebook.com/kj3digitalcoofficial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-pine px-6 py-2.5 font-sans text-sm font-semibold text-paper hover:bg-pine-mid"
+                >
+                  Message us on Facebook
+                </MagneticButton>
+                <MagneticButton
+                  as="button"
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                  className="rounded-full border border-line px-6 py-2.5 font-sans text-sm font-semibold text-ink hover:border-pine"
+                >
+                  Send another message
+                </MagneticButton>
+              </div>
             </div>
           ) : (
             <form
