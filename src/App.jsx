@@ -10,7 +10,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx'
 
 // Ad-campaign landing pages get their own minimal header/footer (no nav
 // links pulling visitors away), so the global chrome is skipped for them.
-const MINIMAL_CHROME_PATHS = ['/get-a-quote']
+const MINIMAL_CHROME_PATHS = ['/free-strategy-call']
 
 function App() {
   const location = useLocation()
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/get-a-quote" element={<GetQuotePage />} />
+          <Route path="/free-strategy-call" element={<GetQuotePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         </Routes>
       </main>

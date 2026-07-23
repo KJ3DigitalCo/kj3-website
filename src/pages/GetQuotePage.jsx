@@ -78,7 +78,7 @@ export default function GetQuotePage() {
       <Seo
         title="Book a Free Strategy Call | KJ3 Digital Co."
         description="Book a free, no-pressure strategy call for your website, social media, ads, or SEO — tailored to your business and budget."
-        path="/get-a-quote"
+        path="/free-strategy-call"
         noindex
       />
       <header className="bg-pine-deep py-6">

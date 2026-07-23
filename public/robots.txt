@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /get-a-quote
+Disallow: /free-strategy-call
 
 Sitemap: https://kj3digitalco.com/sitemap.xml
