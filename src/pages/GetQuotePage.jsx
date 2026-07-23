@@ -136,7 +136,7 @@ export default function GetQuotePage() {
           </ul>
 
           <MagneticButton
-            href="#quote-form"
+            href="#book-call"
             className="mt-10 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep"
           >
             Book My Free Strategy Call
@@ -196,7 +196,7 @@ export default function GetQuotePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-pine-deep py-20" id="quote-form">
+      <section className="relative overflow-hidden bg-pine-deep py-20" id="book-call">
         <FlowFieldBackground />
         <div className="relative z-10 mx-auto max-w-xl px-6">
           <div className="text-center">
