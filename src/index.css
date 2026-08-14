@@ -185,3 +185,36 @@ body {
     animation: none;
   }
 }
+
+@property --cta-glow-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Same rotating-conic-gradient mechanism as .pricing-glow-border (the
+   Momentum Bundle card), but cream instead of gold — the button this
+   wraps is already gold-filled, so a gold ring would blend into it. */
+.cta-glow-ring {
+  --cta-glow-angle: 0deg;
+  background: conic-gradient(
+    from var(--cta-glow-angle),
+    transparent 0%,
+    #fff6de 8%,
+    transparent 20%
+  );
+  animation: cta-glow-spin 2.6s linear infinite;
+}
+
+@keyframes cta-glow-spin {
+  to {
+    --cta-glow-angle: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow-ring {
+    animation: none;
+    background: var(--color-marigold);
+  }
+}
