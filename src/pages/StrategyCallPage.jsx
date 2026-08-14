@@ -371,9 +371,11 @@ export default function StrategyCallPage() {
       <section className="bg-pine-deep py-16">
         <div className="mx-auto max-w-2xl px-6">
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-marigold">Why KJ3</span>
-          <h2 className="mt-3 font-display text-3xl font-bold text-paper sm:text-4xl">
-            We Don&rsquo;t Just Advise. We Build And Run This Every Day.
-          </h2>
+          <MagneticText
+            as="h2"
+            text="We Don't Just Advise. We Build And Run This Every Day."
+            className="mt-3 block font-display text-3xl font-bold text-paper sm:text-4xl"
+          />
           <p className="mt-6 max-w-[52ch] font-sans text-[15px] leading-relaxed text-paper/75">
             KJ3 Digital Co. is a Philippine digital marketing agency working across websites, paid ads, SEO,
             social media, and sales systems for local and small businesses. A KJ3 strategist isn&rsquo;t guessing
