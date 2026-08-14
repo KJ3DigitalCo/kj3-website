@@ -127,7 +127,7 @@ const FAQS = [
   },
 ]
 
-function CtaButton({ className, children, glow = false }) {
+function CtaButton({ className, children }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
@@ -159,18 +159,14 @@ function CtaButton({ className, children, glow = false }) {
     }
   }
 
-  const button = (
-    <MagneticButton as="button" type="button" onClick={handleClick} disabled={loading} className={className}>
-      <span className="flex items-center justify-center gap-2">
-        {loading ? 'Redirecting…' : children}
-        {!loading && ARROW_ICON}
-      </span>
-    </MagneticButton>
-  )
-
   return (
     <div className="flex flex-col items-center gap-2">
-      {glow ? <div className="cta-glow-ring mt-6 inline-block rounded-full p-[3px]">{button}</div> : button}
+      <MagneticButton as="button" type="button" onClick={handleClick} disabled={loading} className={className}>
+        <span className="flex items-center justify-center gap-2">
+          {loading ? 'Redirecting…' : children}
+          {!loading && ARROW_ICON}
+        </span>
+      </MagneticButton>
       {error && (
         <p className="max-w-xs text-center font-sans text-xs text-danger">
           Something went wrong. Please try again, or message us on Facebook.
@@ -360,10 +356,7 @@ export default function StrategyCallPage() {
               This is our standing first-session price for every new client — not a countdown gimmick. You get
               this rate once, the first time you work with us.
             </p>
-            <CtaButton
-              glow
-              className="rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep"
-            >
+            <CtaButton className="mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
               Claim My ₱199 Strategy Call
             </CtaButton>
           </div>
