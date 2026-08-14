@@ -5,6 +5,7 @@ import MagneticText from '../components/MagneticText.jsx'
 import MagneticButton from '../components/MagneticButton.jsx'
 import BuildTransition from '../components/BuildTransition.jsx'
 import ServicesTicker from '../components/ServicesTicker.jsx'
+import FlowFieldBackground from '../components/FlowFieldBackground.jsx'
 import { trackEvent } from '../lib/analytics.js'
 
 const CHECK_ICON = (
@@ -368,8 +369,9 @@ export default function StrategyCallPage() {
         </div>
       </section>
 
-      <section className="bg-pine-deep py-16">
-        <div className="mx-auto max-w-2xl px-6">
+      <section className="relative overflow-hidden bg-pine-deep py-16">
+        <FlowFieldBackground />
+        <div className="relative z-10 mx-auto max-w-2xl px-6">
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-marigold">Why KJ3</span>
           <MagneticText
             as="h2"
