@@ -30,7 +30,10 @@ export default async (req) => {
             quantity: 1,
           },
         ],
-        payment_method_types: ['card', 'gcash', 'paymaya'],
+        // Only qrph is activated on this PayMongo account (covers GCash,
+        // Maya, and 30+ banks via one code). Add 'card', 'gcash', 'paymaya'
+        // here once those individual channels are approved separately.
+        payment_method_types: ['qrph'],
         description: '1-on-1 Strategy Call — KJ3 Digital Co.',
         success_url: `${origin}/strategy-call/thank-you`,
         cancel_url: `${origin}/strategy-call`,
