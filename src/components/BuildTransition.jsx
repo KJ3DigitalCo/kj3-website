@@ -205,9 +205,10 @@ export default function BuildTransition() {
   }, [reduced])
 
   return (
+    <>
     <section
       ref={sectionRef}
-      className="relative -mb-2 h-dvh w-full overflow-hidden bg-black"
+      className="relative h-dvh w-full overflow-hidden bg-black"
     >
       <div ref={flashRef} className="pointer-events-none absolute inset-0 bg-marigold-deep/60 opacity-0" />
 
@@ -271,5 +272,15 @@ export default function BuildTransition() {
         </p>
       </div>
     </section>
+    {/* Solid black buffer painted right at the pin boundary, overlapping
+        whatever follows. Mobile browsers resize the real viewport by
+        50-80px when the address bar shows/hides mid-scroll, which drifts
+        GSAP's cached pin-spacer height away from the live h-dvh value —
+        a fixed negative margin on the section itself couldn't reliably
+        cover that. This strip takes zero net document space (equal
+        negative top margin) and just paints over the seam regardless of
+        how far the cached measurement has drifted. */}
+    <div aria-hidden="true" className="pointer-events-none relative z-10 -mt-14 h-14 bg-black" />
+    </>
   )
 }
