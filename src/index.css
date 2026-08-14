@@ -155,3 +155,33 @@ body {
     animation: none;
   }
 }
+
+@keyframes cta-nudge {
+  0%,
+  55%,
+  100% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(-9px);
+  }
+  28% {
+    transform: translateY(0);
+  }
+  38% {
+    transform: translateY(-5px);
+  }
+  48% {
+    transform: translateY(0);
+  }
+}
+
+.cta-nudge {
+  animation: cta-nudge 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-nudge {
+    animation: none;
+  }
+}

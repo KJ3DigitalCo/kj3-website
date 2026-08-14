@@ -433,7 +433,7 @@ export default function StrategyCallPage() {
             <span className="font-mono text-base text-paper/60 line-through">₱1,990</span>
             <span className="font-display text-3xl font-bold text-marigold">₱199</span>
           </div>
-          <CtaButton className="mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
+          <CtaButton className="cta-nudge mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
             Claim My ₱199 Strategy Call
           </CtaButton>
           <p className="mt-3 font-mono text-[11px] text-paper/55">
