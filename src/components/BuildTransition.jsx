@@ -206,7 +206,7 @@ export default function BuildTransition() {
   return (
     <section
       ref={sectionRef}
-      className="relative -mb-px h-dvh w-full overflow-hidden bg-black"
+      className="relative -mb-2 h-dvh w-full overflow-hidden bg-black"
     >
       <div ref={flashRef} className="pointer-events-none absolute inset-0 bg-marigold-deep/60 opacity-0" />
 
