@@ -20,6 +20,29 @@ const ARROW_ICON = (
   </svg>
 )
 
+const QR_ICON = (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path
+      d="M4 8V5a1 1 0 011-1h3M20 8V5a1 1 0 00-1-1h-3M4 16v3a1 1 0 001 1h3M20 16v3a1 1 0 01-1 1h-3"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+    <rect x="9.5" y="9.5" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.6" />
+  </svg>
+)
+
+const CHAT_ICON = (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path
+      d="M4 5h16a1 1 0 011 1v9a1 1 0 01-1 1H9l-4 4v-4H4a1 1 0 01-1-1V6a1 1 0 011-1z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
 const MYTHS = [
   {
     icon: (
@@ -369,6 +392,32 @@ export default function StrategyCallPage() {
               <CtaButton className="mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
                 Claim My ₱199 Strategy Call
               </CtaButton>
+
+              <div className="mt-6 flex flex-col gap-3 border-t border-line pt-5 text-left">
+                <div className="flex items-start gap-2.5">
+                  <span className="mt-0.5 shrink-0 text-marigold-ink">{QR_ICON}</span>
+                  <p className="font-sans text-[12.5px] leading-relaxed text-ink-muted">
+                    <strong className="font-semibold text-ink">No second phone to scan with?</strong> Screenshot
+                    the QR code on the payment page, then open GCash, Maya, or your bank app → Scan QR → and
+                    choose <strong className="font-semibold text-ink">&ldquo;Upload from Gallery&rdquo;</strong>{' '}
+                    to select the screenshot.
+                  </p>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="mt-0.5 shrink-0 text-marigold-ink">{CHAT_ICON}</span>
+                  <p className="font-sans text-[12.5px] leading-relaxed text-ink-muted">
+                    Prefer to pay another way, or have a question first?{' '}
+                    <a
+                      href="https://www.facebook.com/kj3digitalcoofficial"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-ink underline decoration-marigold underline-offset-2"
+                    >
+                      Message us on Facebook →
+                    </a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
