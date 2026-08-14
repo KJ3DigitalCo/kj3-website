@@ -142,6 +142,7 @@ export default function BuildTransition() {
           end: '+=230%',
           scrub: true,
           pin: true,
+          anticipatePin: 1,
           onUpdate(self) {
             if (self.direction === 1 && self.progress >= collisionThreshold && autoState === 0) {
               autoState = 1
