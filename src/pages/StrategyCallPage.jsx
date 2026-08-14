@@ -431,16 +431,18 @@ export default function StrategyCallPage() {
           <h2 className="mt-3 font-display text-3xl font-bold text-paper sm:text-4xl">What Clients Had To Say</h2>
           <p className="mt-3 font-sans text-sm text-paper/60">Actual messages from real 1-on-1 strategy call clients.</p>
         </div>
-        <div className="mt-8 flex items-start gap-4 overflow-x-auto px-6 pb-3 [scroll-snap-type:x_mandatory]">
-          {TESTIMONIALS.map((t) => (
-            <img
-              key={t.src}
-              src={t.src}
-              alt={t.alt}
-              loading="lazy"
-              className="block w-60 shrink-0 rounded-2xl shadow-xl shadow-black/40 [scroll-snap-align:start]"
-            />
-          ))}
+        <div className="mx-auto mt-8 max-w-5xl overflow-x-auto px-6 pb-3">
+          <div className="flex w-max items-start gap-4 [scroll-snap-type:x_mandatory]">
+            {TESTIMONIALS.map((t) => (
+              <img
+                key={t.src}
+                src={t.src}
+                alt={t.alt}
+                loading="lazy"
+                className="block w-60 shrink-0 rounded-2xl shadow-xl shadow-black/40 [scroll-snap-align:start]"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
