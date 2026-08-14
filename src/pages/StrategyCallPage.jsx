@@ -105,12 +105,14 @@ const SERVICES = [
 ]
 
 const TESTIMONIALS = [
-  { src: '/testimonials/jessa-tan.webp', alt: 'Testimonial screenshot from Jessa Tan' },
+  { src: '/testimonials/patrick-reyes.webp', alt: 'Testimonial screenshot from Patrick Reyes' },
   { src: '/testimonials/nicole-garcia.webp', alt: 'Testimonial screenshot from Nicole Garcia' },
   { src: '/testimonials/ryan-bautista.webp', alt: 'Testimonial screenshot from Ryan Bautista' },
-  { src: '/testimonials/jessamae-santos.webp', alt: 'Testimonial screenshot from Jessa Mae Santos' },
   { src: '/testimonials/carlo-mendoza.webp', alt: 'Testimonial screenshot from Carlo Mendoza' },
   { src: '/testimonials/angela-ramos.webp', alt: 'Testimonial screenshot from Angela Ramos' },
+  { src: '/testimonials/mark-villanueva.webp', alt: 'Testimonial screenshot from Mark Villanueva' },
+  { src: '/testimonials/kevin-delacruz.webp', alt: 'Testimonial screenshot from Kevin Dela Cruz' },
+  { src: '/testimonials/jessamae-santos.webp', alt: 'Testimonial screenshot from Jessa Mae Santos' },
 ]
 
 const FAQS = [
