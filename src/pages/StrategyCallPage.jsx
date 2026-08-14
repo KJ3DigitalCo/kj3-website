@@ -256,7 +256,7 @@ export default function StrategyCallPage() {
             </span>
           </div>
 
-          <CtaButton className="mt-8 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
+          <CtaButton className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
             Claim My ₱199 Strategy Call
           </CtaButton>
           <p className="mt-3 font-mono text-[11px] text-paper/55">
@@ -348,7 +348,7 @@ export default function StrategyCallPage() {
               This is our standing first-session price for every new client — not a countdown gimmick. You get
               this rate once, the first time you work with us.
             </p>
-            <CtaButton className="mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
+            <CtaButton className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
               Claim My ₱199 Strategy Call
             </CtaButton>
           </div>
@@ -422,7 +422,7 @@ export default function StrategyCallPage() {
             <span className="font-mono text-base text-paper/60 line-through">₱1,990</span>
             <span className="font-display text-3xl font-bold text-marigold">₱199</span>
           </div>
-          <CtaButton className="mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
+          <CtaButton className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
             Claim My ₱199 Strategy Call
           </CtaButton>
           <p className="mt-3 font-mono text-[11px] text-paper/55">
