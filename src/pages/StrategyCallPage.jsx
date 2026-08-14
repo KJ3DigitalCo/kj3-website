@@ -4,6 +4,7 @@ import FlagSpotlight from '../components/FlagSpotlight.jsx'
 import MagneticText from '../components/MagneticText.jsx'
 import MagneticButton from '../components/MagneticButton.jsx'
 import BuildTransition from '../components/BuildTransition.jsx'
+import ServicesTicker from '../components/ServicesTicker.jsx'
 import { trackEvent } from '../lib/analytics.js'
 
 const CHECK_ICON = (
@@ -269,7 +270,11 @@ export default function StrategyCallPage() {
 
       <BuildTransition />
 
-      <section className="-mt-px bg-pine-deep py-16">
+      <div className="-mt-px">
+        <ServicesTicker />
+      </div>
+
+      <section className="bg-pine-deep py-16">
         <div className="mx-auto max-w-2xl px-6">
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-marigold">
             The Real Reason Your Sales Aren't Moving
@@ -432,6 +437,8 @@ export default function StrategyCallPage() {
           </p>
         </div>
       </section>
+
+      <ServicesTicker />
 
       <footer className="bg-pine-deep py-8 text-center">
         <p className="font-sans text-xs text-paper/50">© {new Date().getFullYear()} KJ3 Digital Co. All rights reserved.</p>
