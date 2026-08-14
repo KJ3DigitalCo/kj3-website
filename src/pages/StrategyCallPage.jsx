@@ -282,9 +282,7 @@ export default function StrategyCallPage() {
 
       <BuildTransition />
 
-      <div className="-mt-px">
-        <ServicesTicker />
-      </div>
+      <ServicesTicker />
 
       <section className="bg-pine-deep py-16">
         <div className="mx-auto max-w-2xl px-6">
