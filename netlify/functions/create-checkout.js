@@ -25,7 +25,7 @@ export default async (req) => {
             amount: 19900,
             currency: 'PHP',
             description:
-              "60-minute 1-on-1 diagnostic call with a KJ3 strategist — your offer, ads, and follow-up reviewed, plus a documented action plan. Paying via QR? Screenshot it, then use your GCash/Maya/bank app's Scan QR → Upload from Gallery — no second phone needed.",
+              '60-minute 1-on-1 diagnostic call with a KJ3 strategist — your offer, ads, and follow-up reviewed, plus a documented action plan.',
             name: '1-on-1 Strategy Call',
             quantity: 1,
           },
