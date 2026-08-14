@@ -336,29 +336,31 @@ export default function StrategyCallPage() {
 
       <section className="bg-manila pb-16">
         <div className="mx-auto max-w-2xl px-6">
-          <div className="rounded-2xl border border-line bg-paper p-8 text-center">
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-marigold-ink">
-              First Purchase Offer
-            </span>
-            <p className="mt-2 font-mono text-xs uppercase tracking-wide text-ink-muted">
-              Regular Price <strong className="text-ink line-through">₱1,990</strong>
-            </p>
-            <div className="mt-1 font-display text-6xl font-bold text-ink sm:text-7xl">₱199</div>
-            <div className="mt-3 flex justify-center gap-2">
-              <span className="rounded-full bg-marigold px-3 py-1 font-mono text-[11px] font-medium text-pine-deep">
-                90% Off
+          <div className="rounded-2xl p-[2px] pricing-glow-border shadow-xl shadow-marigold/20">
+            <div className="rounded-2xl bg-paper p-8 text-center">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-marigold-ink">
+                First Purchase Offer
               </span>
-              <span className="rounded-full border border-marigold-ink px-3 py-1 font-mono text-[11px] font-medium text-marigold-ink">
-                First Purchase
-              </span>
+              <p className="mt-2 font-mono text-xs uppercase tracking-wide text-ink-muted">
+                Regular Price <strong className="text-ink line-through">₱1,990</strong>
+              </p>
+              <div className="mt-1 font-display text-6xl font-bold text-ink sm:text-7xl">₱199</div>
+              <div className="mt-3 flex justify-center gap-2">
+                <span className="rounded-full bg-marigold px-3 py-1 font-mono text-[11px] font-medium text-pine-deep">
+                  90% Off
+                </span>
+                <span className="rounded-full border border-marigold-ink px-3 py-1 font-mono text-[11px] font-medium text-marigold-ink">
+                  First Purchase
+                </span>
+              </div>
+              <p className="mx-auto mt-4 max-w-[42ch] font-sans text-[13px] leading-relaxed text-ink-muted">
+                This is our standing first-session price for every new client — not a countdown gimmick. You get
+                this rate once, the first time you work with us.
+              </p>
+              <CtaButton className="mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
+                Claim My ₱199 Strategy Call
+              </CtaButton>
             </div>
-            <p className="mx-auto mt-4 max-w-[42ch] font-sans text-[13px] leading-relaxed text-ink-muted">
-              This is our standing first-session price for every new client — not a countdown gimmick. You get
-              this rate once, the first time you work with us.
-            </p>
-            <CtaButton className="mt-6 rounded-full bg-marigold px-8 py-3.5 font-sans text-sm font-semibold text-pine-deep hover:bg-marigold-deep">
-              Claim My ₱199 Strategy Call
-            </CtaButton>
           </div>
 
           <div className="mt-6 flex flex-wrap justify-center gap-6 font-mono text-[11px] text-ink-muted">
