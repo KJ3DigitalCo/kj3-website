@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Seo from '../components/Seo.jsx'
 import FlagSpotlight from '../components/FlagSpotlight.jsx'
 import MagneticText from '../components/MagneticText.jsx'
@@ -128,6 +128,18 @@ const FAQS = [
 function CtaButton({ className, children }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+
+  // If the redirect to PayMongo sends the browser back here (Back button or
+  // the checkout's cancel_url), the page can be restored from the
+  // back/forward cache with "loading" still stuck true from right before
+  // the redirect — reset it whenever that happens.
+  useEffect(() => {
+    const handlePageShow = (event) => {
+      if (event.persisted) setLoading(false)
+    }
+    window.addEventListener('pageshow', handlePageShow)
+    return () => window.removeEventListener('pageshow', handlePageShow)
+  }, [])
 
   const handleClick = async () => {
     setLoading(true)
