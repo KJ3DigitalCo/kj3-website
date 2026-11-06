@@ -1,98 +1,247 @@
 import { useState } from 'react'
 import Reveal from './Reveal.jsx'
 import MagneticButton from './MagneticButton.jsx'
-import { SERVICES } from '../data/services.jsx'
 
-const BUNDLES = [
+const PACKAGES = [
   {
-    name: 'Essentials Bundle',
-    price: '₱8,500',
-    period: '/mo',
-    description:
-      'Consistent social media and steady search visibility — the essentials to start showing up online.',
-    includes: [
-      { label: 'Starter Social Media Management', slug: 'social-media-management', tier: 'Starter' },
-      { label: 'Starter SEO', slug: 'seo', tier: 'Starter' },
+    name: 'Content Only',
+    price: '₱5,000',
+    tagline:
+      'A lean content solution to keep your brand active and visible online. We handle the content, you focus on your business.',
+    items: [
+      '30 graphic posts / month',
+      'Caption writing',
+      'Content calendar',
+      'Posting and scheduling',
+      'Free Meta Ads setup & guidance',
+    ],
+    details: [
+      ['30 graphic posts / month', 'High-quality, on-brand designs.'],
+      ['Caption writing', 'Engaging captions that connect.'],
+      ['Content calendar', "Planned content so you always know what's next."],
+      ['Posting', 'We post for you on your social media.'],
+      ['Scheduling', 'Consistent posting, on time, every time.'],
+      [
+        'Free Meta Ads setup & guidance',
+        'We set up your Facebook & Instagram Ads account and guide you on the basics so you can start running ads with confidence.',
+      ],
     ],
   },
   {
-    name: 'Momentum Bundle',
-    price: '₱17,000',
-    period: '/mo',
-    description:
-      'More content, more platforms, and real SEO groundwork — for businesses ready to scale their presence.',
-    includes: [
-      { label: 'Growth Social Media Management', slug: 'social-media-management', tier: 'Growth' },
-      { label: 'Standard SEO', slug: 'seo', tier: 'Standard' },
+    name: 'Content & Ads',
+    price: '₱8,000',
+    tagline: 'Content that connects. Ads that bring customers.',
+    guarantee: { number: '30–90', label: 'inquiries / month, guaranteed*' },
+    items: [
+      '30 graphic posts / month',
+      'Caption writing, calendar, posting, scheduling',
+      'Facebook ad campaign we run',
+      'KJ3-funded ad budget',
     ],
+    details: [
+      ['30 graphic posts / month', 'High-quality, on-brand designs.'],
+      ['Caption writing', 'Engaging captions that connect and convert.'],
+      ['Content calendar', "Planned content so you always know what's next."],
+      ['Posting and scheduling', 'We post for you, on time, every time.'],
+      ['Facebook ad campaign we run', 'We plan, create, run and optimize.'],
+      ['KJ3-funded ad budget', 'We fund your ad budget. More visibility, more conversations, more customers.'],
+    ],
+  },
+  {
+    name: 'Content, Ads & Community Management',
+    price: '₱12,000',
     featured: true,
-  },
-  {
-    name: 'All-In Bundle',
-    price: '₱35,000',
-    period: '/mo',
-    description:
-      'Full social, complete SEO, and paid ads working together — for businesses ready to grow aggressively.',
-    includes: [
-      { label: 'Pro Social Media Management', slug: 'social-media-management', tier: 'Pro' },
-      { label: 'Full SEO', slug: 'seo', tier: 'Full' },
-      { label: 'Basic Paid Ads', slug: 'paid-ads-management', tier: 'Basic' },
+    tag: 'Most Recommended',
+    tagline: 'We create. We run. We manage. You grow.',
+    guarantee: { number: '30–90', label: 'inquiries / month, guaranteed*' },
+    items: [
+      '30 graphic posts / month',
+      'Facebook ad campaign we run',
+      'KJ3-funded ad budget',
+      'Daily community management',
+      'Monthly report',
+    ],
+    details: [
+      ['30 graphic posts a month', 'Designed to sell, not just for likes.'],
+      ['Captions written for every post', 'Strategic, persuasive, and on-brand.'],
+      ['Content calendar', 'Planned, organized, and aligned with your goals.'],
+      ['Posting & scheduling', 'We post on time, every time.'],
+      ['Facebook ad campaign we run', 'We plan, create, run and optimize.'],
+      ['Ad campaign setup & monitoring', 'We test, optimize, and scale for results.'],
+      ['KJ3-funded ad budget', 'We fund your ad budget.'],
+      ['Daily community management', 'We reply to comments & DMs within 8 business hours.'],
+      ['Monthly report', 'Clear insights. Real results. Full transparency.'],
     ],
   },
   {
-    name: 'Scale Bundle',
-    price: '₱52,000',
-    period: '/mo',
-    description:
-      'Everything, maxed out — full social, complete SEO, advanced ads, and a chatbot that never sleeps.',
-    includes: [
-      { label: 'Pro Social Media Management', slug: 'social-media-management', tier: 'Pro' },
-      { label: 'Full SEO', slug: 'seo', tier: 'Full' },
-      { label: 'Advanced Paid Ads', slug: 'paid-ads-management', tier: 'Advanced' },
-      { label: 'Chatbot Pro', slug: 'chatbot-automation', tier: 'Pro' },
+    name: 'Complete Sales System',
+    price: '₱22,000',
+    top: true,
+    tag: 'Top Tier · Done-for-you',
+    tagline: 'Everything working together. More inquiries, more conversions, more sales.',
+    guarantee: { number: '60–180', label: 'inquiries / month, guaranteed*' },
+    items: [
+      'Content that sells',
+      'Community management',
+      'Meta Pixel & conversion tracking',
+      'Bigger Facebook ad budget',
+      'Website + sales funnel',
+      'Chatbot setup',
+      'Monthly strategy call',
+    ],
+    details: [
+      ['Content that sells', 'Strategic, high-converting content planned and posted consistently.'],
+      ['Community management', 'Daily engagement, replying to comments & DMs within 8 business hours.'],
+      ['Meta Pixel & conversion tracking', 'Track every action, measure results, and maximize ROI.'],
+      ['Bigger Facebook ad budget', 'Optimized ad spend guaranteed to bring 60–180 inquiries a month.'],
+      ['Website + sales funnel', 'High-converting landing page built to capture and convert leads.'],
+      ['Chatbot setup', '24/7 automated responses that nurture leads and book more sales.'],
+      ['Monthly strategy call', 'We review, refine, and scale together with data-backed strategies.'],
+      ['KJ3-funded ad budget', 'We fund your ad budget to run and scale your campaigns.'],
     ],
   },
 ]
 
-const LAUNCH = {
-  name: 'Launch Package',
-  price: '₱30,000',
-  period: 'one-time',
-  description:
-    'Brand new business? Get a website, a brand identity, and a month of social media handled — all at once.',
-  includes: [
-    {
-      label: 'Business Website',
-      slug: 'website-builds',
-      tier: 'Business Website',
-      bonus: 'Copywriting included free, up to 5 sections.',
-      note: 'Domain setup (.com) is not included — billed separately.',
-    },
-    { label: 'Branding Package', slug: 'content-creation', tier: 'Branding package' },
-    {
-      label: '1 month of Growth Social Media Management, free',
-      slug: 'social-media-management',
-      tier: 'Growth',
-    },
-  ],
+function Check({ className }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={`mt-0.5 shrink-0 ${className}`}
+      aria-hidden="true"
+    >
+      <path
+        d="M5 12.5l4.5 4.5L19 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
 }
 
-function findServiceDetail(slug, tier) {
-  const service = SERVICES.find((item) => item.slug === slug)
-  if (!service) return null
-  const rows = service.pricing?.packages || service.pricing?.items || []
-  const row = rows.find((item) => item.name === tier)
-  return { service, row }
+function PackageCard({ pkg, isExpanded, onToggle }) {
+  const dark = Boolean(pkg.top)
+  const detailsId = `pkg-details-${pkg.name.replace(/\W+/g, '-').toLowerCase()}`
+
+  const shell = dark
+    ? 'border border-marigold/35 bg-gradient-to-br from-pine-deep via-pine to-pine-deep text-paper shadow-xl shadow-marigold/10'
+    : pkg.featured
+      ? 'bg-manila text-ink'
+      : 'border border-line bg-manila text-ink hover:border-pine/40'
+  const muted = dark ? 'text-paper/70' : 'text-ink-muted'
+  const rule = dark ? 'border-paper/20' : 'border-line'
+  const accent = dark ? 'text-marigold' : 'text-marigold-ink'
+
+  return (
+    <div className={`flex h-full flex-col rounded-2xl p-7 text-left transition-colors ${shell}`}>
+      {pkg.tag && (
+        <span
+          className={`mb-3 inline-flex w-fit items-center rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] ${
+            dark ? 'border border-marigold text-marigold' : 'bg-marigold text-pine-deep'
+          }`}
+        >
+          {pkg.tag}
+        </span>
+      )}
+      <h3 className="font-display text-lg font-bold leading-tight">{pkg.name}</h3>
+      <p className="mt-2 flex items-baseline gap-1">
+        <span className="font-display text-3xl font-bold tabular-nums">{pkg.price}</span>
+        <span className={`font-sans text-sm ${muted}`}>/mo</span>
+      </p>
+      <p className={`mt-3 font-sans text-sm leading-relaxed ${muted}`}>{pkg.tagline}</p>
+
+      {pkg.guarantee && (
+        <div
+          className={`mt-4 rounded-[10px] border px-3 py-2.5 font-sans text-[13px] leading-snug ${
+            dark ? 'border-marigold/35 bg-marigold/10' : 'border-line bg-paper'
+          }`}
+        >
+          <span className={`font-display text-[17px] font-bold ${dark ? 'text-marigold' : ''}`}>
+            {pkg.guarantee.number}
+          </span>{' '}
+          {pkg.guarantee.label}
+        </div>
+      )}
+
+      <ul className={`mt-5 space-y-2 border-t pt-5 ${rule}`}>
+        {pkg.items.map((item) => (
+          <li key={item} className="flex gap-2 font-sans text-sm leading-snug">
+            <Check className={accent} />
+            {item}
+          </li>
+        ))}
+      </ul>
+
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isExpanded}
+        aria-controls={detailsId}
+        className={`mt-4 flex w-fit items-center gap-1.5 font-sans text-xs font-semibold ${accent}`}
+      >
+        {isExpanded ? 'Hide full details' : 'See full details'}
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+          aria-hidden="true"
+        >
+          <path
+            d="M6 9l6 6 6-6"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+
+      <div
+        id={detailsId}
+        className={`grid transition-all duration-300 ease-out ${
+          isExpanded ? 'mt-4 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <dl className={`space-y-3 border-t pt-4 ${rule}`}>
+            {pkg.details.map(([title, text]) => (
+              <div key={title}>
+                <dt className="font-display text-[13px] font-bold">{title}</dt>
+                <dd className={`mt-0.5 font-sans text-xs leading-relaxed ${muted}`}>{text}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+
+      <div className="mt-auto pt-6">
+        <MagneticButton
+          href="#contact"
+          className={`w-full rounded-full px-6 py-3 text-center font-sans text-sm font-semibold ${
+            dark
+              ? 'bg-marigold text-pine-deep hover:bg-marigold-deep'
+              : 'bg-pine text-paper hover:bg-pine-mid'
+          }`}
+        >
+          Avail Now
+        </MagneticButton>
+      </div>
+    </div>
+  )
 }
 
 export default function Pricing() {
   const [expanded, setExpanded] = useState({})
 
-  const toggleBundle = (name) => {
+  const toggle = (name) => {
     setExpanded((prev) => ({ ...prev, [name]: !prev[name] }))
   }
-
-  const launchExpanded = Boolean(expanded[LAUNCH.name])
 
   return (
     <section id="pricing" className="bg-paper py-24">
@@ -102,233 +251,39 @@ export default function Pricing() {
             Pricing
           </span>
           <h2 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl">
-            Bundles that cover your whole online presence.
+            Pick the package that fits where your business is now.
           </h2>
           <p className="mt-4 font-sans text-sm leading-relaxed text-ink-muted">
-            One predictable monthly price instead of separate line items. Need just one service, or
-            something in between? We'll quote it individually — just ask.
+            One monthly price per package. Start with content, add ads when you&rsquo;re ready, or let us
+            run the whole sales system. Need something different? We&rsquo;ll quote it individually, just
+            ask.
           </p>
         </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {BUNDLES.map((bundle, index) => {
-            const isExpanded = Boolean(expanded[bundle.name])
-            return (
-              <Reveal
-                key={bundle.name}
-                delay={(index % 4) * 80}
-                className={bundle.featured ? 'relative z-10' : 'relative'}
+          {PACKAGES.map((pkg, index) => (
+            <Reveal
+              key={pkg.name}
+              delay={(index % 4) * 80}
+              className={pkg.featured ? 'relative z-10' : 'relative'}
+            >
+              <div
+                className={`h-full transition-transform duration-300 ${
+                  pkg.featured
+                    ? 'rounded-2xl p-[2px] pricing-glow-border shadow-xl shadow-marigold/20 lg:scale-105'
+                    : ''
+                }`}
               >
-                <div
-                  className={`h-full transition-transform duration-300 ${
-                    bundle.featured
-                      ? 'rounded-2xl p-[2px] pricing-glow-border shadow-xl shadow-marigold/20 lg:scale-110'
-                      : ''
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleBundle(bundle.name)}
-                    aria-expanded={isExpanded}
-                    className={`flex h-full w-full flex-col rounded-2xl p-7 text-left transition-colors ${
-                      bundle.featured ? 'bg-manila' : 'border border-line bg-manila hover:border-pine/40'
-                    }`}
-                  >
-                    {bundle.featured && (
-                      <span className="mb-3 inline-flex w-fit items-center rounded-full bg-marigold px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-pine-deep">
-                        Most Popular
-                      </span>
-                    )}
-                    <h3 className="font-display text-lg font-bold text-ink">{bundle.name}</h3>
-                    <p className="mt-2 flex items-baseline gap-1">
-                      <span className="font-display text-3xl font-bold text-ink">{bundle.price}</span>
-                      <span className="font-sans text-sm text-ink-muted">{bundle.period}</span>
-                    </p>
-                    <p className="mt-3 font-sans text-sm leading-relaxed text-ink-muted">
-                      {bundle.description}
-                    </p>
-                    <ul className="mt-5 space-y-2 border-t border-line pt-5">
-                      {bundle.includes.map((item) => (
-                        <li key={item.label} className="flex gap-2 font-sans text-sm text-ink">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            className="mt-0.5 shrink-0 text-marigold-ink"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M5 12.5l4.5 4.5L19 7"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                          {item.label}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <span className="mt-4 flex items-center gap-1.5 font-sans text-xs font-semibold text-marigold-ink">
-                      {isExpanded ? 'Hide full details' : 'See full details'}
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M6 9l6 6 6-6"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-
-                    <div
-                      className={`grid transition-all duration-300 ease-out ${
-                        isExpanded ? 'mt-4 grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                        <div className="space-y-4 border-t border-line pt-4">
-                          {bundle.includes.map((item) => {
-                            const detail = findServiceDetail(item.slug, item.tier)
-                            if (!detail) return null
-                            return (
-                              <div key={item.label}>
-                                <h4 className="font-display text-sm font-bold text-ink">
-                                  {detail.service.title}
-                                  {item.tier && (
-                                    <span className="ml-1.5 font-sans text-xs font-normal text-ink-muted">
-                                      · {item.tier}
-                                    </span>
-                                  )}
-                                </h4>
-                                {detail.row?.included && (
-                                  <p className="mt-1 font-sans text-xs leading-relaxed text-ink-muted">
-                                    {detail.row.included}
-                                  </p>
-                                )}
-                              </div>
-                            )
-                          })}
-                        </div>
-                      </div>
-                    </div>
-                  </button>
-                </div>
-              </Reveal>
-            )
-          })}
+                <PackageCard pkg={pkg} isExpanded={Boolean(expanded[pkg.name])} onToggle={() => toggle(pkg.name)} />
+              </div>
+            </Reveal>
+          ))}
         </div>
 
-        <Reveal className="relative mt-6">
-          <button
-            type="button"
-            onClick={() => toggleBundle(LAUNCH.name)}
-            aria-expanded={launchExpanded}
-            className="relative flex w-full flex-col gap-4 overflow-hidden rounded-2xl border border-marigold/30 bg-gradient-to-br from-pine-deep via-pine to-pine-deep p-7 text-left shadow-xl shadow-marigold/10"
-          >
-            <div
-              className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-marigold/20 blur-3xl"
-              aria-hidden="true"
-            />
-            <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="premium-text-shadow relative">
-                <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-marigold">
-                  New business · Premium
-                </span>
-                <h3 className="mt-1 font-display text-lg font-bold text-paper">{LAUNCH.name}</h3>
-                <p className="mt-1.5 max-w-lg font-sans text-sm font-medium leading-relaxed text-paper/90">
-                  {LAUNCH.description}
-                </p>
-                <span className="mt-3 flex items-center gap-1.5 font-sans text-xs font-semibold text-paper">
-                  {launchExpanded ? 'Hide full details' : 'See full details'}
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className={`transition-transform duration-300 ${launchExpanded ? 'rotate-180' : ''}`}
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div className="premium-text-shadow relative flex shrink-0 flex-col items-start gap-1 sm:items-end">
-                <p className="flex items-baseline gap-1">
-                  <span className="font-display text-2xl font-bold text-paper">{LAUNCH.price}</span>
-                  <span className="font-sans text-sm font-semibold text-paper/90">{LAUNCH.period}</span>
-                </p>
-                <p className="font-sans text-xs font-medium text-paper/80">
-                  {LAUNCH.includes.map((item) => item.label).join(' · ')}
-                </p>
-              </div>
-            </div>
-
-            <div
-              className={`relative grid w-full transition-all duration-300 ease-out ${
-                launchExpanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-              }`}
-            >
-              <div className="overflow-hidden">
-                <div className="premium-text-shadow grid gap-4 border-t border-paper/25 pt-5 sm:grid-cols-3">
-                  {LAUNCH.includes.map((item) => {
-                    const detail = findServiceDetail(item.slug, item.tier)
-                    if (!detail) return null
-                    return (
-                      <div key={item.label}>
-                        <h4 className="font-display text-sm font-bold text-paper">
-                          {detail.service.title}
-                          {item.tier && (
-                            <span className="ml-1.5 font-sans text-xs font-normal text-paper/70">
-                              · {item.tier}
-                            </span>
-                          )}
-                        </h4>
-                        {detail.row?.included && (
-                          <p className="mt-1 font-sans text-xs leading-relaxed text-paper/80">
-                            {detail.row.included}
-                          </p>
-                        )}
-                        {item.bonus && (
-                          <p className="mt-1 font-sans text-xs font-semibold leading-relaxed text-marigold">
-                            {item.bonus}
-                          </p>
-                        )}
-                        {item.note && (
-                          <p className="mt-1 font-sans text-xs italic leading-relaxed text-paper/60">
-                            {item.note}
-                          </p>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
-          </button>
-        </Reveal>
-
         <Reveal delay={100} className="mt-10 text-center">
-          <p className="font-sans text-sm text-ink-muted">
-            2 rounds of revisions included on every deliverable. Landing pages in 3–5 days,
-            business websites in 7–10 days. SEO is a long game — expect real movement in 3–6
-            months, not overnight.
+          <p className="mx-auto max-w-2xl font-sans text-xs leading-relaxed text-ink-muted">
+            *Results may vary depending on offer, industry, and market conditions. We optimize for quality
+            inquiries. 2 rounds of revisions included on every deliverable.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <MagneticButton
