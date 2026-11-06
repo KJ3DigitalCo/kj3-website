@@ -30,6 +30,8 @@ const PACKAGES = [
   {
     name: 'Content & Ads',
     price: '₱8,000',
+    featured: true,
+    tag: 'Most Recommended',
     tagline: 'Content that connects. Ads that bring customers.',
     guarantee: { number: '30–90', label: 'inquiries / month, guaranteed*' },
     items: [
@@ -50,8 +52,6 @@ const PACKAGES = [
   {
     name: 'Content, Ads & Community Management',
     price: '₱12,000',
-    featured: true,
-    tag: 'Most Recommended',
     tagline: 'We create. We run. We manage. You grow.',
     guarantee: { number: '30–90', label: 'inquiries / month, guaranteed*' },
     items: [
