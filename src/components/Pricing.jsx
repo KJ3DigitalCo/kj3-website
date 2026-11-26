@@ -7,24 +7,31 @@ const PACKAGES = [
     name: 'Content Only',
     price: '₱5,000',
     tagline:
-      'A lean content solution to keep your brand active and visible online. We handle the content, you focus on your business.',
+      'You run the business. We handle the content. Professional content and a consistent online presence.',
     items: [
       '30 graphic posts / month',
       'Caption writing',
       'Content calendar',
-      'Posting and scheduling',
+      'Social media posting & scheduling',
       'Free Meta Ads setup & guidance',
     ],
-    details: [
-      ['30 graphic posts / month', 'High-quality, on-brand designs.'],
-      ['Caption writing', 'Engaging captions that connect.'],
-      ['Content calendar', "Planned content so you always know what's next."],
-      ['Posting', 'We post for you on your social media.'],
-      ['Scheduling', 'Consistent posting, on time, every time.'],
-      [
-        'Free Meta Ads setup & guidance',
-        'We set up your Facebook & Instagram Ads account and guide you on the basics so you can start running ads with confidence.',
-      ],
+    groups: [
+      {
+        title: 'Content & social media',
+        items: [
+          '30 graphic posts per month',
+          'Caption writing',
+          'Content calendar',
+          'Social media posting',
+          'Content scheduling',
+        ],
+      },
+      {
+        title: 'Free bonus',
+        items: [
+          'Meta Ads setup & guidance: we set up your Facebook & Instagram Ads account and walk you through the basics',
+        ],
+      },
     ],
   },
   {
@@ -32,72 +39,78 @@ const PACKAGES = [
     price: '₱8,000',
     featured: true,
     tag: 'Most Recommended',
-    tagline: 'Content that connects. Ads that bring customers.',
-    guarantee: { number: '30–90', label: 'inquiries / month, guaranteed*' },
+    tagline:
+      'We create your content. We run your ads. Reach more potential customers with professional content and managed advertising.',
+    adBudget: '₱3,000',
     items: [
       '30 graphic posts / month',
-      'Caption writing, calendar, posting, scheduling',
-      'Facebook ad campaign we run',
-      'KJ3-funded ad budget',
+      'Caption writing, calendar, posting & scheduling',
+      'Facebook ads planning & creation',
+      'Campaign management & optimization',
     ],
-    details: [
-      ['30 graphic posts / month', 'High-quality, on-brand designs.'],
-      ['Caption writing', 'Engaging captions that connect and convert.'],
-      ['Content calendar', "Planned content so you always know what's next."],
-      ['Posting and scheduling', 'We post for you, on time, every time.'],
-      ['Facebook ad campaign we run', 'We plan, create, run and optimize.'],
-      ['KJ3-funded ad budget', 'We fund your ad budget. More visibility, more conversations, more customers.'],
+    groups: [
+      {
+        title: 'Content & social media',
+        items: ['30 graphic posts per month', 'Caption writing', 'Content calendar', 'Posting & scheduling'],
+      },
+      {
+        title: 'Facebook ads management',
+        items: ['Campaign planning', 'Ads creation', 'Campaign management', 'Ads optimization'],
+      },
     ],
   },
   {
-    name: 'Content, Ads & Community Management',
-    price: '₱12,000',
-    tagline: 'We create. We run. We manage. You grow.',
-    guarantee: { number: '30–90', label: 'inquiries / month, guaranteed*' },
-    items: [
-      '30 graphic posts / month',
-      'Facebook ad campaign we run',
-      'KJ3-funded ad budget',
-      'Daily community management',
-      'Monthly report',
-    ],
-    details: [
-      ['30 graphic posts a month', 'Designed to sell, not just for likes.'],
-      ['Captions written for every post', 'Strategic, persuasive, and on-brand.'],
-      ['Content calendar', 'Planned, organized, and aligned with your goals.'],
-      ['Posting & scheduling', 'We post on time, every time.'],
-      ['Facebook ad campaign we run', 'We plan, create, run and optimize.'],
-      ['Ad campaign setup & monitoring', 'We test, optimize, and scale for results.'],
-      ['KJ3-funded ad budget', 'We fund your ad budget.'],
-      ['Daily community management', 'We reply to comments & DMs within 8 business hours.'],
-      ['Monthly report', 'Clear insights. Real results. Full transparency.'],
-    ],
-  },
-  {
-    name: 'Complete Sales System',
+    name: 'Fully Managed Sales System',
     price: '₱22,000',
     top: true,
-    tag: 'Top Tier · Done-for-you',
-    tagline: 'Everything working together. More inquiries, more conversions, more sales.',
-    guarantee: { number: '60–180', label: 'inquiries / month, guaranteed*' },
+    tag: 'Fully Managed',
+    tagline:
+      'We build it. We manage it. We optimize it. Your end-to-end marketing and sales system to attract leads, generate inquiries, and grow your business every month.',
+    adBudget: '₱3,000',
     items: [
-      'Content that sells',
-      'Community management',
+      'Full business website + sales funnel',
+      '30 graphic posts / month + Facebook ads',
+      'Chatbot setup & automation',
       'Meta Pixel & conversion tracking',
-      'Bigger Facebook ad budget',
-      'Website + sales funnel',
-      'Chatbot setup',
-      'Monthly strategy call',
+      'Monthly performance report & strategy call',
+      'Domain, hosting & maintenance included',
     ],
-    details: [
-      ['Content that sells', 'Strategic, high-converting content planned and posted consistently.'],
-      ['Community management', 'Daily engagement, replying to comments & DMs within 8 business hours.'],
-      ['Meta Pixel & conversion tracking', 'Track every action, measure results, and maximize ROI.'],
-      ['Bigger Facebook ad budget', 'Optimized ad spend guaranteed to bring 60–180 inquiries a month.'],
-      ['Website + sales funnel', 'High-converting landing page built to capture and convert leads.'],
-      ['Chatbot setup', '24/7 automated responses that nurture leads and book more sales.'],
-      ['Monthly strategy call', 'We review, refine, and scale together with data-backed strategies.'],
-      ['KJ3-funded ad budget', 'We fund your ad budget to run and scale your campaigns.'],
+    groups: [
+      {
+        title: 'Website & sales funnel management',
+        items: [
+          'Full business website development',
+          'Mobile-responsive website design',
+          'Landing pages',
+          'Thank you pages',
+          'Lead capture forms',
+          'Sales funnel setup & optimization',
+          'Website maintenance & updates',
+        ],
+      },
+      {
+        title: 'Content & advertising',
+        items: [
+          '30 graphic posts per month',
+          'Caption writing & content calendar',
+          'Social media posting & scheduling',
+          'Facebook ads management & optimization',
+          'Meta Pixel & conversion tracking',
+        ],
+      },
+      {
+        title: 'Automation & strategy',
+        items: [
+          'Chatbot setup & automation',
+          'Chatbot maintenance & updates',
+          'Monthly performance report',
+          'Monthly strategy call',
+        ],
+      },
+      {
+        title: 'Included in your monthly package',
+        items: ['Domain registration & renewal', 'Website hosting & maintenance'],
+      },
     ],
   },
 ]
@@ -154,16 +167,16 @@ function PackageCard({ pkg, isExpanded, onToggle }) {
       </p>
       <p className={`mt-3 font-sans text-sm leading-relaxed ${muted}`}>{pkg.tagline}</p>
 
-      {pkg.guarantee && (
+      {pkg.adBudget && (
         <div
           className={`mt-4 rounded-[10px] border px-3 py-2.5 font-sans text-[13px] leading-snug ${
             dark ? 'border-marigold/35 bg-marigold/10' : 'border-line bg-paper'
           }`}
         >
           <span className={`font-display text-[17px] font-bold ${dark ? 'text-marigold' : ''}`}>
-            {pkg.guarantee.number}
+            {pkg.adBudget}
           </span>{' '}
-          {pkg.guarantee.label}
+          monthly KJ3-funded ad budget, included in your package
         </div>
       )}
 
@@ -209,14 +222,21 @@ function PackageCard({ pkg, isExpanded, onToggle }) {
         }`}
       >
         <div className="overflow-hidden">
-          <dl className={`space-y-3 border-t pt-4 ${rule}`}>
-            {pkg.details.map(([title, text]) => (
-              <div key={title}>
-                <dt className="font-display text-[13px] font-bold">{title}</dt>
-                <dd className={`mt-0.5 font-sans text-xs leading-relaxed ${muted}`}>{text}</dd>
+          <div className={`space-y-4 border-t pt-4 ${rule}`}>
+            {pkg.groups.map((group) => (
+              <div key={group.title}>
+                <h4 className="font-display text-[13px] font-bold">{group.title}</h4>
+                <ul className="mt-1.5 space-y-1">
+                  {group.items.map((item) => (
+                    <li key={item} className={`flex gap-1.5 font-sans text-xs leading-relaxed ${muted}`}>
+                      <Check className={accent} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
 
@@ -260,7 +280,7 @@ export default function Pricing() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {PACKAGES.map((pkg, index) => (
             <Reveal
               key={pkg.name}
@@ -282,8 +302,7 @@ export default function Pricing() {
 
         <Reveal delay={100} className="mt-10 text-center">
           <p className="mx-auto max-w-2xl font-sans text-xs leading-relaxed text-ink-muted">
-            *Results may vary depending on offer, industry, and market conditions. We optimize for quality
-            inquiries. 2 rounds of revisions included on every deliverable.
+            2 rounds of revisions included on every deliverable.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <MagneticButton
