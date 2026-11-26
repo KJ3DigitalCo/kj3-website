@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /free-strategy-call
-Disallow: /strategy-call
 
 Sitemap: https://kj3digitalco.com/sitemap.xml
