@@ -4,6 +4,7 @@ import MagneticButton from './MagneticButton.jsx'
 const LINKS = [
   { href: '/#services', label: 'Services' },
   { href: '/#pricing', label: 'Pricing' },
+  { href: '/creatives', label: 'Our Work' },
   { href: '/#process', label: 'How We Work' },
   { href: '/#contact', label: 'Contact' },
 ]

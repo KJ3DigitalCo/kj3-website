@@ -8,4 +8,12 @@
     <loc>https://kj3digitalco.com/services</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://kj3digitalco.com/creatives</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kj3digitalco.com/work</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

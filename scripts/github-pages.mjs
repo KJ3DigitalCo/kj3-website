@@ -3,7 +3,7 @@
 // 404.html is the same app, so unknown paths still render through the router.
 import { copyFileSync, writeFileSync } from 'node:fs'
 
-const ROUTES = ['services', 'free-strategy-call', 'privacy-policy']
+const ROUTES = ['services', 'free-strategy-call', 'privacy-policy', 'creatives', 'work']
 
 for (const route of [...ROUTES, '404']) {
   copyFileSync('dist/index.html', `dist/${route}.html`)

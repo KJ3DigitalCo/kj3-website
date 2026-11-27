@@ -7,6 +7,8 @@ import HomePage from './pages/HomePage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
 import GetQuotePage from './pages/GetQuotePage.jsx'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx'
+import CreativesPage from './pages/CreativesPage.jsx'
+import WorkPage from './pages/WorkPage.jsx'
 
 // Ad-campaign landing pages get their own minimal header/footer (no nav
 // links pulling visitors away), so the global chrome is skipped for them.
@@ -26,6 +28,8 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/free-strategy-call" element={<GetQuotePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/creatives" element={<CreativesPage />} />
+          <Route path="/work" element={<WorkPage />} />
         </Routes>
       </main>
       {!minimalChrome && (
