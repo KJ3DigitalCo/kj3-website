@@ -17,6 +17,7 @@ export default function CreativesPage() {
   const [industry, setIndustry] = useState('All')
   const [open, setOpen] = useState(null)
   const closeRef = useRef(null)
+  const touchX = useRef(0)
   const isOpen = open !== null
 
   const visible = useMemo(
@@ -95,7 +96,7 @@ export default function CreativesPage() {
                 type="button"
                 aria-pressed={active}
                 onClick={() => setIndustry(name)}
-                className={`shrink-0 rounded-full border px-4 py-2 font-sans text-[13px] font-semibold transition-colors ${
+                className={`shrink-0 rounded-full border px-4 py-2.5 font-sans text-[13px] font-semibold transition-colors ${
                   active ? 'border-pine bg-pine text-paper' : 'border-line bg-paper text-ink hover:border-pine'
                 }`}
               >
@@ -176,6 +177,13 @@ export default function CreativesPage() {
           aria-modal="true"
           aria-label={`Post for ${current.name}`}
           onClick={(event) => event.target === event.currentTarget && setOpen(null)}
+          onTouchStart={(event) => {
+            touchX.current = event.touches[0].clientX
+          }}
+          onTouchEnd={(event) => {
+            const dx = event.changedTouches[0].clientX - touchX.current
+            if (Math.abs(dx) > 50) step(dx > 0 ? -1 : 1)
+          }}
           className="fixed inset-0 z-[900] flex items-center justify-center bg-black/85 p-4"
         >
           <figure className="flex max-w-[min(92vw,860px)] flex-col items-center gap-3">
@@ -195,7 +203,7 @@ export default function CreativesPage() {
             type="button"
             onClick={() => step(-1)}
             aria-label="Previous post"
-            className="fixed left-4 top-1/2 h-12 w-12 -translate-y-1/2 rounded-full bg-paper/15 text-2xl text-paper hover:bg-paper/25"
+            className="fixed bottom-6 left-[calc(50%-60px)] h-12 w-12 rounded-full md:bottom-auto md:left-4 md:top-1/2 md:-translate-y-1/2 bg-paper/15 text-2xl text-paper hover:bg-paper/25"
           >
             &#8249;
           </button>
@@ -203,7 +211,7 @@ export default function CreativesPage() {
             type="button"
             onClick={() => step(1)}
             aria-label="Next post"
-            className="fixed right-4 top-1/2 h-12 w-12 -translate-y-1/2 rounded-full bg-paper/15 text-2xl text-paper hover:bg-paper/25"
+            className="fixed bottom-6 right-[calc(50%-60px)] h-12 w-12 rounded-full md:bottom-auto md:right-4 md:top-1/2 md:-translate-y-1/2 bg-paper/15 text-2xl text-paper hover:bg-paper/25"
           >
             &#8250;
           </button>
